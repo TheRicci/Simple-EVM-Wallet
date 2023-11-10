@@ -1,0 +1,1 @@
+This is an unfinished work of an EVM compatible wallet, although balance fetching and transactions are working already, made with Rustlang (Tauri + Leptos)

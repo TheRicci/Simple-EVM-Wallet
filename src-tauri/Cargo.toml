@@ -1,0 +1,38 @@
+[package]
+name = "evm-wallet"
+version = "0.0.0"
+description = "A Tauri App"
+authors = ["you"]
+license = ""
+repository = ""
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[build-dependencies]
+tauri-build = { version = "1.5", features = [] }
+
+[dependencies]
+chrono = "0.4"
+futures = "0.3"
+dirs = "5.0"
+tempfile = "3.8"
+tokio = {version ="1.33", features = ["full"] }
+ethers = { version = "2.0", features = ["legacy", "ledger"] }
+secp256k1 = "0.28.0"
+log4rs ="1.2.0"
+dotenv = "0.15.0"
+ledger-zondax-generic = { git = "https://github.com/Zondax/ledger-rs" }
+ledger-transport = { git = "https://github.com/Zondax/ledger-rs" }
+ledger-transport-hid = { git = "https://github.com/Zondax/ledger-rs" }
+thiserror = { version = "1.0" }
+tauri = { version = "1.5", features = ["shell-open"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+log = "0.4"
+
+[features]
+# this feature is used for production builds or when `devPath` points to the filesystem
+# DO NOT REMOVE!!
+custom-protocol = ["tauri/custom-protocol"]
+
